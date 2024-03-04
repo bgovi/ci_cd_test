@@ -1,0 +1,18 @@
+name: Release Workflow
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  release-job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check Out Repo
+      uses: actions/checkout@v2
+
+    - name: Get the Tag Name
+      run: |
+        TAG_REF=${{ github.ref }}
+        TAG_NAME=${TAG_REF#refs/tags/}
+        echo "The tag associated with this release is $TAG_NAME"
