@@ -27,7 +27,7 @@ jobs:
       run: npm ci
 
     - name: Run build
-      run: npm generate
+      run: npm run generate
 
   test_api:
 
