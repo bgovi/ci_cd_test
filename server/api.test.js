@@ -5,6 +5,11 @@ describe('My Test Suite', () => {
       expect(2).toBe(2)
     });
 
+    test('Test error', () => {
+        expect(1).toBe(2)
+      });
+
+
 });
 
 // describe('API Calls', () => {
