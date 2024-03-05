@@ -16,3 +16,15 @@ jobs:
         TAG_REF=${{ github.ref }}
         TAG_NAME=${TAG_REF#refs/tags/}
         echo "The tag associated with this release is $TAG_NAME"
+
+    - name: Build Docker container
+      run: |
+        TAG_REF=${{ github.ref }}
+        TAG_NAME=${TAG_REF#refs/tags/}
+        echo "The tag associated with this release is $TAG_NAME and context is ${{github.ref_name}}"
+
+    - name: Deploy Docker to Docker hub
+      run: |
+        TAG_REF=${{ github.ref }}
+        TAG_NAME=${TAG_REF#refs/tags/}
+        echo "The tag associated with this release is $TAG_NAME"
